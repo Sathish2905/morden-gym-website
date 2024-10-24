@@ -111,7 +111,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 pt-8">
           <p className="text-center text-gray-400">
-            © {new Date().getFullYear()} Power Gym. All rights reserved.
+            © {new Date().getFullYear()} Code with Sathish. All rights reserved.
           </p>
         </div>
       </div>

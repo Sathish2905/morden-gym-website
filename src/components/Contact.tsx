@@ -71,7 +71,7 @@ const Contact = () => {
                   <div>
                     <p className="text-white">Location</p>
                     <p className="text-gray-400">
-                      123 Fitness Street, Gym City, GC 12345
+                      123 Fitness Street, Gym City, PY 123456
                     </p>
                   </div>
                 </div>
@@ -79,14 +79,14 @@ const Contact = () => {
                   <Phone className="h-6 w-6 text-red-600 mr-4 mt-1" />
                   <div>
                     <p className="text-white">Phone</p>
-                    <p className="text-gray-400">(555) 123-4567</p>
+                    <p className="text-gray-400">+91 9999999999</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <Mail className="h-6 w-6 text-red-600 mr-4 mt-1" />
                   <div>
                     <p className="text-white">Email</p>
-                    <p className="text-gray-400">info@powergym.com</p>
+                    <p className="text-gray-400">info@codewithsathish.com</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -107,7 +107,7 @@ const Contact = () => {
               <iframe
                 title="map"
                 className="w-full h-full rounded-lg"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9916256937595!2d2.292292615509614!3d48.858370079287466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sEiffel%20Tower!5e0!3m2!1sen!2sus!4v1647544339985!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62456.799312747564!2d79.77232789494015!3d11.936376280288217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5361ab8e49cfcf%3A0xcc6bd326d2f0b04e!2sPuducherry!5e0!3m2!1sen!2sin!4v1729790609961!5m2!1sen!2sin"
                 loading="lazy"
               ></iframe>
             </div>

@@ -4,7 +4,7 @@ import { Check } from 'lucide-react';
 const plans = [
   {
     name: 'Basic',
-    price: '29',
+    price: '1299',
     duration: 'month',
     features: [
       'Access to gym facilities',
@@ -17,7 +17,7 @@ const plans = [
   },
   {
     name: 'Premium',
-    price: '59',
+    price: '1499',
     duration: 'month',
     features: [
       'All Basic features',
@@ -32,7 +32,7 @@ const plans = [
   },
   {
     name: 'Elite',
-    price: '99',
+    price: '1999',
     duration: 'month',
     features: [
       'All Premium features',
@@ -81,7 +81,7 @@ const Memberships = () => {
                   {plan.name}
                 </h3>
                 <div className="flex items-center justify-center">
-                  <span className="text-4xl font-bold text-white">${plan.price}</span>
+                  <span className="text-4xl font-bold text-white">Rs. {plan.price}</span>
                   <span className="text-gray-400 ml-2">/{plan.duration}</span>
                 </div>
               </div>

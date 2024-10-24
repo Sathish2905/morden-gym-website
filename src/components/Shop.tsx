@@ -4,25 +4,25 @@ import { ShoppingCart } from 'lucide-react';
 const products = [
   {
     name: 'Power Gym T-Shirt',
-    price: 29.99,
+    price: 299.99,
     image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
     category: 'Apparel'
   },
   {
     name: 'Premium Shaker Bottle',
-    price: 19.99,
+    price: 199.99,
     image: 'https://images.unsplash.com/photo-1620188526357-ff08e03a254c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
     category: 'Accessories'
   },
   {
     name: 'Resistance Bands Set',
-    price: 34.99,
+    price: 349.99,
     image: 'https://images.unsplash.com/photo-1598971639058-fab3c3109a00?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
     category: 'Equipment'
   },
   {
     name: 'Gym Duffel Bag',
-    price: 49.99,
+    price: 499.99,
     image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
     category: 'Accessories'
   }
@@ -60,7 +60,7 @@ const Shop = () => {
                   {product.name}
                 </h3>
                 <div className="flex items-center justify-between mt-4">
-                  <span className="text-white font-bold">${product.price}</span>
+                  <span className="text-white font-bold">Rs. {product.price}</span>
                   <button className="flex items-center bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
                     <ShoppingCart className="h-4 w-4 mr-2" />
                     Add to Cart

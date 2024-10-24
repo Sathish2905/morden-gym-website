@@ -1,24 +1,63 @@
-import React from 'react';
-import { Play, ChevronRight } from 'lucide-react';
+'use client'
 
-const Hero = () => {
+import React, { useRef, useEffect, useState } from 'react'
+import { Play, ChevronRight } from 'lucide-react'
+
+export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const [videoStatus, setVideoStatus] = useState<'loading' | 'loaded' | 'error'>('loading')
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (video) {
+      const handleLoaded = () => {
+        console.log('Video loaded successfully')
+        setVideoStatus('loaded')
+      }
+      const handleError = (e: ErrorEvent) => {
+        console.error('Video loading error:', e)
+        setVideoStatus('error')
+      }
+
+      video.addEventListener('loadeddata', handleLoaded)
+      video.addEventListener('error', handleError)
+
+      // Attempt to play the video
+      video.play().then(() => {
+        console.log('Video playback started')
+      }).catch(error => {
+        console.error("Video playback failed:", error)
+        setVideoStatus('error')
+      })
+
+      return () => {
+        video.removeEventListener('loadeddata', handleLoaded)
+        video.removeEventListener('error', handleError)
+      }
+    }
+  }, [])
+
   return (
-    <div className="relative min-h-screen flex items-center">
-      {/* Video Background */}
+    <div className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Background */}
       <div className="absolute inset-0 w-full h-full">
         <div className="absolute inset-0 bg-black/60 z-10"></div>
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <source
-            src="https://player.vimeo.com/external/414874938.sd.mp4?s=cb465e9ebb00f601fa64e7983e5e55d6e0d2fd86&profile_id=165&oauth2_token_id=57447761"
-            type="video/mp4"
-          />
-        </video>
+        {videoStatus !== 'error' && (
+          <video
+            ref={videoRef}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="/resources/gym-background.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        )}
+        {videoStatus === 'error' && (
+          <div className="w-full h-full bg-gray-900" />
+        )}
       </div>
 
       {/* Content */}
@@ -49,7 +88,5 @@ const Hero = () => {
         </div>
       </div>
     </div>
-  );
-};
-
-export default Hero;
+  )
+}
